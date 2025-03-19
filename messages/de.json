@@ -1,0 +1,14 @@
+{
+  "Navbar": {
+    "Home": "Startseite",
+    "Pets": "Haustiere",
+    "AddNewPet": "Neues Haustier"
+  },
+  "AppointmentStats": {
+    "AppointmentStats": "Terminstatistiken",
+    "CompletionRate": "Abschlussquote",
+    "Upcoming": "Bevorstehend",
+    "Last30Days": "Letzte 30 Tage",
+    "TotalAppointments": "Gesamttermine"
+  }
+}

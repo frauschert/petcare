@@ -1,0 +1,49 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Pet {
+  id          Int           @id @default(autoincrement())
+  name        String
+  species     String
+  breed       String?
+  birthDate   DateTime?
+  weight      Float?
+  appointments Appointment[]
+  mealPlans   MealPlan[]
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+}
+
+model Appointment {
+  id          Int       @id @default(autoincrement())
+  pet         Pet       @relation(fields: [petId], references: [id])
+  petId       Int
+  type        String    // e.g., "Checkup", "Vaccination", "Surgery"
+  date        DateTime
+  description String?
+  completed   Boolean   @default(false)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+model MealPlan {
+  id          Int       @id @default(autoincrement())
+  pet         Pet       @relation(fields: [petId], references: [id])
+  petId       Int
+  foodType    String
+  amount      Float
+  unit        String    // e.g., "grams", "cups"
+  frequency   String    // e.g., "daily", "twice daily"
+  notes       String?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}

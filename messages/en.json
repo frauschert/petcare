@@ -1,0 +1,14 @@
+{
+  "Navbar": {
+    "Home": "Home",
+    "Pets": "Pets",
+    "AddNewPet": "Add New Pet"
+  },
+  "AppointmentStats": {
+    "AppointmentStats": "Appointment Stats",
+    "CompletionRate": "Completion Rate",
+    "Upcoming": "Upcoming",
+    "Last30Days": "Last 30 Days",
+    "TotalAppointments": "Total Appointments"
+  }
+}
