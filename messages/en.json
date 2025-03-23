@@ -10,5 +10,16 @@
     "Upcoming": "Upcoming",
     "Last30Days": "Last 30 Days",
     "TotalAppointments": "Total Appointments"
+  },
+  "AddPetForm": {
+    "AddPet": "Add Pet",
+    "Name": "Name",
+    "Species": "Species",
+    "Breed": "Breed",
+    "Birthdate": "Birthdate",
+    "Age": "Age",
+    "Weight": "Weight",
+    "Height": "Height",
+    "Color": "Color"
   }
 }

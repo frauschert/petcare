@@ -10,5 +10,16 @@
     "Upcoming": "Bevorstehend",
     "Last30Days": "Letzte 30 Tage",
     "TotalAppointments": "Gesamttermine"
+  },
+  "AddPetForm": {
+    "AddPet": "Haustier hinzufügen",
+    "Name": "Name",
+    "Species": "Art",
+    "Breed": "Rasse",
+    "Birthdate": "Geburtsdatum",
+    "Age": "Alter",
+    "Weight": "Gewicht",
+    "Height": "Höhe",
+    "Color": "Farbe"
   }
 }
