@@ -7,13 +7,21 @@ import { PetFormData, petSchema } from '../schemas/pets';
 const prisma = new PrismaClient();
 
 export async function getPets() {
-  const pets = await prisma.pet.findMany({
-    include: {
-      appointments: true,
-      mealPlans: true,
-    },
-  });
-  return pets;
+  try {
+    const pets = await prisma.pet.findMany({
+      include: {
+        appointments: true,
+        mealPlans: true,
+      },
+      orderBy: {
+        name: 'asc',
+      },
+    });
+    return pets;
+  } catch (error) {
+    console.error('Failed to fetch pets:', error);
+    return [];
+  }
 }
 
 export async function createPet(data: PetFormData) {
@@ -26,20 +34,39 @@ export async function createPet(data: PetFormData) {
       error: errorMessages,
     };
   }
-  const pet = await prisma.pet.create({
-    data: {
-      ...data,
-      birthDate: data.birthDate ? new Date(data.birthDate) : undefined,
-    },
-  });
-  revalidatePath('/pets');
-  return { data: pet };
+
+  try {
+    const pet = await prisma.pet.create({
+      data: {
+        ...data,
+        birthDate: data.birthDate ? new Date(data.birthDate) : undefined,
+        weight: data.weight ? parseFloat(data.weight.toString()) : undefined,
+      },
+      include: {
+        appointments: true,
+        mealPlans: true,
+      },
+    });
+    revalidatePath('/');
+    return { data: pet };
+  } catch (error) {
+    console.error('Failed to create pet:', error);
+    return {
+      error: 'Failed to create pet. Please try again.',
+    };
+  }
 }
 
 export async function deletePet(id: number) {
-  await prisma.pet.delete({
-    where: {
-      id,
-    },
-  });
+  try {
+    await prisma.pet.delete({
+      where: {
+        id,
+      },
+    });
+    revalidatePath('/');
+  } catch (error) {
+    console.error('Failed to delete pet:', error);
+    throw new Error('Failed to delete pet. Please try again.');
+  }
 }

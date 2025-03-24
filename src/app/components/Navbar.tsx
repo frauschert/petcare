@@ -5,55 +5,55 @@ import { useRouter, usePathname } from 'next/navigation';
 
 export default function Navbar() {
   const t = useTranslations('Navbar');
+
   const router = useRouter();
   const pathname = usePathname();
 
   const isActive = (path: string) => pathname === path;
 
   return (
-    <nav className="fixed left-0 top-0 h-full w-64 bg-surface-tonal-a10 text-foreground p-6 shadow-xl">
-      <div className="mb-8 flex items-center space-x-3">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-8 w-8 text-primary-a30"
-          viewBox="0 0 20 20"
-          fill="currentColor"
-        >
-          <path
-            fillRule="evenodd"
-            d="M6.672 1.911a1 1 0 10-1.932.518l.259.966a1 1 0 001.932-.518l-.26-.966zM2.429 4.74a1 1 0 10-.517 1.932l.966.259a1 1 0 00.517-1.932l-.966-.26zm8.814-.569a1 1 0 00-1.415-1.414l-.707.707a1 1 0 101.415 1.415l.707-.708zm-7.071 7.072l.707-.707A1 1 0 003.465 9.12l-.708.707a1 1 0 001.415 1.415zm3.2-5.171a1 1 0 00-1.3 1.3l4 10a1 1 0 001.823.075l1.38-2.759 3.018 3.02a1 1 0 001.414-1.415l-3.019-3.02 2.76-1.379a1 1 0 00-.076-1.822l-10-4z"
-            clipRule="evenodd"
-          />
-        </svg>
-        <h1 className="text-2xl font-bold text-foreground">Pet Care</h1>
-      </div>
+    <nav className="fixed top-0 left-0 h-screen w-64 bg-surface-tonal-a10 shadow-sm">
+      <div className="h-full flex flex-col">
+        <div className="p-6">
+          <div className="flex items-center space-x-3">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-8 w-8 text-primary-a20"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fillRule="evenodd"
+                d="M10 2c-2.236 0-4.43.18-6.57.524C1.993 2.755 1 4.014 1 5.426v5.148c0 1.413.993 2.67 2.43 2.902 1.168.188 2.352.327 3.55.414.28.02.521.18.642.413l1.713 3.293a.75.75 0 001.33 0l1.713-3.293a.783.783 0 01.642-.413 41.102 41.102 0 003.55-.414c1.437-.232 2.43-1.49 2.43-2.902V5.426c0-1.413-.993-2.67-2.43-2.902A41.289 41.289 0 0010 2zM7 7a1 1 0 011-1h4a1 1 0 110 2H8a1 1 0 01-1-1zm1 3a1 1 0 100 2h4a1 1 0 100-2H8z"
+                clipRule="evenodd"
+              />
+            </svg>
+            <span className="text-xl font-bold text-foreground">Pet Care</span>
+          </div>
+        </div>
 
-      <div className="space-y-2">
-        <button
-          onClick={() => router.push('/')}
-          className={`w-full flex items-center space-x-3 text-left px-4 py-3 rounded-lg transition-colors text-foreground ${
-            isActive('/') ? 'bg-primary-a10' : 'hover:bg-primary-a20'
-          }`}
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-5 w-5"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-          >
-            <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
-          </svg>
-          <span>Dashboard</span>
-        </button>
+        <div className="flex-1 px-4">
+          <div className="space-y-1">
+            <button
+              onClick={() => router.push('/')}
+              className={`w-full flex items-center space-x-3 text-left px-4 py-3 rounded-lg transition-colors text-foreground ${
+                isActive('/') ? 'bg-primary-a10' : 'hover:bg-primary-a20'
+              }`}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+              </svg>
+              <span>Dashboard</span>
+            </button>
 
-        <div className="pt-4 mt-4 border-t border-primary-a20">
-          <h2 className="px-4 text-sm font-medium text-primary-a20 uppercase tracking-wider">
-            Quick Actions
-          </h2>
-          <div className="mt-3 space-y-2">
             <button
               onClick={() => router.push('/add-pet')}
-              className={`w-full flex items-center space-x-3 text-left px-4 py-2 rounded-lg text-foreground transition-colors ${
+              className={`w-full flex items-center space-x-3 text-left px-4 py-3 rounded-lg transition-colors text-foreground ${
                 isActive('/add-pet') ? 'bg-primary-a10' : 'hover:bg-primary-a20'
               }`}
             >
@@ -73,14 +73,12 @@ export default function Navbar() {
             </button>
           </div>
         </div>
-      </div>
 
-      <div className="absolute bottom-0 left-0 w-full p-6 bg-surface-tonal-a20">
-        <div className="text-sm text-primary-a20">
+        <div className="p-6 bg-surface-tonal-a20">
           <div className="flex items-center space-x-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
+              className="h-5 w-5 text-primary-a20"
               viewBox="0 0 20 20"
               fill="currentColor"
             >
@@ -90,9 +88,11 @@ export default function Navbar() {
                 clipRule="evenodd"
               />
             </svg>
-            <span>Pet Care Manager</span>
+            <div>
+              <p className="font-medium text-primary-a20">Pet Care Manager</p>
+              <p className="text-sm text-primary-a20">Version 1.0.0</p>
+            </div>
           </div>
-          <p className="mt-1 text-primary-a20">Version 1.0.0</p>
         </div>
       </div>
     </nav>
