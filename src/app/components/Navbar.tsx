@@ -37,7 +37,9 @@ export default function Navbar() {
             <button
               onClick={() => router.push('/')}
               className={`w-full flex items-center space-x-3 text-left px-4 py-3 rounded-lg transition-colors text-foreground ${
-                isActive('/') ? 'bg-clr-primary-a10' : 'hover:bg-clr-primary-a20'
+                isActive('/')
+                  ? 'bg-clr-primary-a10'
+                  : 'hover:bg-clr-primary-a20'
               }`}
             >
               <svg
@@ -54,7 +56,9 @@ export default function Navbar() {
             <button
               onClick={() => router.push('/add-pet')}
               className={`w-full flex items-center space-x-3 text-left px-4 py-3 rounded-lg transition-colors text-foreground ${
-                isActive('/add-pet') ? 'bg-clr-primary-a10' : 'hover:bg-clr-primary-a20'
+                isActive('/add-pet')
+                  ? 'bg-clr-primary-a10'
+                  : 'hover:bg-clr-primary-a20'
               }`}
             >
               <svg
@@ -89,7 +93,9 @@ export default function Navbar() {
               />
             </svg>
             <div>
-              <p className="font-medium text-clr-primary-a20">Pet Care Manager</p>
+              <p className="font-medium text-clr-primary-a20">
+                Pet Care Manager
+              </p>
               <p className="text-sm text-clr-primary-a20">Version 1.0.0</p>
             </div>
           </div>

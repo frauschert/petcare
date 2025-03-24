@@ -16,7 +16,9 @@ export default async function Home() {
         <div className="hero bg-clr-primary-a0 text-clr-surface-a0 py-12">
           <div className="max-w-6xl mx-auto text-center">
             <h1 className="text-4xl font-bold mb-4">Welcome to Pet Care</h1>
-            <p className="text-lg">Manage your pets' appointments and meal plans with ease.</p>
+            <p className="text-lg">
+              Manage your pets' appointments and meal plans with ease.
+            </p>
           </div>
         </div>
         <div className="max-w-6xl mx-auto space-y-8">
