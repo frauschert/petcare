@@ -12,13 +12,13 @@ export default function Navbar() {
   const isActive = (path: string) => pathname === path;
 
   return (
-    <nav className="fixed top-0 left-0 h-screen w-64 bg-surface-tonal-a10 shadow-sm">
+    <nav className="fixed top-0 left-0 h-screen w-64 bg-clr-surface-a10 shadow-sm">
       <div className="h-full flex flex-col">
         <div className="p-6">
           <div className="flex items-center space-x-3">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-8 w-8 text-primary-a20"
+              className="h-8 w-8 text-clr-primary-a20"
               viewBox="0 0 20 20"
               fill="currentColor"
             >
@@ -37,7 +37,7 @@ export default function Navbar() {
             <button
               onClick={() => router.push('/')}
               className={`w-full flex items-center space-x-3 text-left px-4 py-3 rounded-lg transition-colors text-foreground ${
-                isActive('/') ? 'bg-primary-a10' : 'hover:bg-primary-a20'
+                isActive('/') ? 'bg-clr-primary-a10' : 'hover:bg-clr-primary-a20'
               }`}
             >
               <svg
@@ -54,7 +54,7 @@ export default function Navbar() {
             <button
               onClick={() => router.push('/add-pet')}
               className={`w-full flex items-center space-x-3 text-left px-4 py-3 rounded-lg transition-colors text-foreground ${
-                isActive('/add-pet') ? 'bg-primary-a10' : 'hover:bg-primary-a20'
+                isActive('/add-pet') ? 'bg-clr-primary-a10' : 'hover:bg-clr-primary-a20'
               }`}
             >
               <svg
@@ -74,11 +74,11 @@ export default function Navbar() {
           </div>
         </div>
 
-        <div className="p-6 bg-surface-tonal-a20">
+        <div className="p-6 bg-clr-surface-tonal-a20">
           <div className="flex items-center space-x-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5 text-primary-a20"
+              className="h-5 w-5 text-clr-primary-a20"
               viewBox="0 0 20 20"
               fill="currentColor"
             >
@@ -89,8 +89,8 @@ export default function Navbar() {
               />
             </svg>
             <div>
-              <p className="font-medium text-primary-a20">Pet Care Manager</p>
-              <p className="text-sm text-primary-a20">Version 1.0.0</p>
+              <p className="font-medium text-clr-primary-a20">Pet Care Manager</p>
+              <p className="text-sm text-clr-primary-a20">Version 1.0.0</p>
             </div>
           </div>
         </div>

@@ -31,26 +31,26 @@ export function PetList({ pets }: PetListProps) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: index * 0.1 }}
           onClick={() => router.push(`/pet/${pet.id}`)}
-          className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 cursor-pointer hover:shadow-md transition-shadow"
+          className="bg-clr-surface-a0 p-6 rounded-lg shadow-sm border border-clr-surface-a20 cursor-pointer hover:shadow-md transition-shadow hover:bg-clr-surface-tonal-a10"
         >
-          <h3 className="text-xl font-semibold text-gray-800 mb-2">
+          <h3 className="text-xl font-semibold text-foreground mb-2">
             {pet.name}
           </h3>
-          <p className="text-emerald-600">
+          <p className="text-clr-primary-a20">
             {pet.species} {pet.breed ? `• ${pet.breed}` : ''}
           </p>
 
-          <div className="mt-4 pt-4 border-t border-gray-100">
+          <div className="mt-4 pt-4 border-t border-clr-surface-a20">
             <div className="flex justify-between text-sm">
               <div>
-                <p className="text-gray-600">Appointments</p>
-                <p className="text-lg font-semibold text-gray-800">
+                <p className="text-clr-surface-a50">Appointments</p>
+                <p className="text-lg font-semibold text-foreground">
                   {pet.appointments.length}
                 </p>
               </div>
               <div>
-                <p className="text-gray-600">Meal Plans</p>
-                <p className="text-lg font-semibold text-gray-800">
+                <p className="text-clr-surface-a50">Meal Plans</p>
+                <p className="text-lg font-semibold text-foreground">
                   {pet.mealPlans.length}
                 </p>
               </div>

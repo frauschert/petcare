@@ -13,6 +13,12 @@ export default async function Home() {
   return (
     <ErrorBoundary>
       <main className="min-h-screen p-8">
+        <div className="hero bg-clr-primary-a0 text-clr-surface-a0 py-12">
+          <div className="max-w-6xl mx-auto text-center">
+            <h1 className="text-4xl font-bold mb-4">Welcome to Pet Care</h1>
+            <p className="text-lg">Manage your pets' appointments and meal plans with ease.</p>
+          </div>
+        </div>
         <div className="max-w-6xl mx-auto space-y-8">
           <div className="flex justify-between items-center">
             <h1 className="text-3xl font-bold text-gray-800">Pet Dashboard</h1>
@@ -43,6 +49,11 @@ export default async function Home() {
             recentChanges={[]}
           />
         </div>
+        <footer className="bg-clr-surface-a10 text-foreground py-6 mt-12">
+          <div className="max-w-6xl mx-auto text-center">
+            <p>&copy; 2025 Pet Care. All rights reserved.</p>
+          </div>
+        </footer>
       </main>
     </ErrorBoundary>
   );
